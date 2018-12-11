@@ -1,0 +1,15 @@
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorAccent">@color/gray</item>
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="android:buttonStyle">@style/BeatBoxButton</item>
+    </style>
+
+    <style name="BeatBoxButton" parent="android:Widget.Material.Button">
+        <item name="android:background">@drawable/button_beat_box</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>
