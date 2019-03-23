@@ -1,6 +1,11 @@
 package cn.sound.ui
 
+import android.annotation.TargetApi
+import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER
+import android.view.WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import cn.sound.R
@@ -19,6 +24,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         voicePool = VoicePool(this)
+        @TargetApi(Build.VERSION_CODES.P)
+        window.attributes.layoutInDisplayCutoutMode = LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         drumPadRecycler.layoutManager = StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.VERTICAL)
         drumPadRecycler.adapter = soundAdapter
         voicePool.sounds.forEach {
