@@ -6,8 +6,6 @@ data class Sound(val assetPath: String, val soundId: Int) {
     init {
         val components = assetPath.split("/")
         val fileName = components[components.size - 1]
-        name = fileName.replace(".wav", "")
-            .replace("_", " ")
-            .capitalize()
+        name = fileName.replace(".wav", "").replace("_", " ").capitalize()
     }
 }
